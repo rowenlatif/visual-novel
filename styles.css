@@ -16,51 +16,56 @@ body, html {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: absolute; /* Ensure it overlays the canvas */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.9); /* Add a slight background */
-    z-index: 10; /* Ensure it's above the canvas */
+    position: absolute;
+    top: 10%;
+    left: -20%;
+    width: 80%;
+    height: 80%;
+    z-index: 10;
 }
 
+.mainMenuBG {
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 100%;
+    object-fit: cover; 
+    z-index: -1; 
+}
 
 .menu-title {
-    font-size: 80px; /* Adjust as needed for visibility */
+    font-size: 50px; 
     color: #000;
     text-align: center;
-    margin-bottom: 40px; /* Add spacing below the title */
-    font-family: 'Daydream', sans-serif; /* Use the custom font */
-    white-space: nowrap; /* Prevent the title from wrapping onto a new line */
+    margin-bottom: 40px; 
+    font-family: 'Daydream', sans-serif; 
+    white-space: nowrap;
 }
 
 .menu-button {
-    display: block; /* Buttons behave as block-level elements */
+    display: block;
     width: 200px;
     height: 50px;
-    background-color: #d9c0ba;
-    border: none;
+    background-color: #514344;
     border-radius: 30px;
     font-size: 20px;
     color: #000;
-    font-family: 'Daydream', sans-serif; /* Use the custom font */
+    font-family: 'Daydream', sans-serif; 
     text-align: center;
     cursor: pointer;
-    margin: 20px 0; /* Vertical spacing between buttons */
+    margin: 20px 0; 
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .menu-button:hover {
-    background-color: #daccc9;
+    background-color: #978f8e;
 }
 
 .menu-button:active {
-    background-color: #b89a8f;
+    background-color: #978f8e;
     transform: scale(0.98); 
 }
-
-
 
 
 
@@ -106,18 +111,10 @@ body, html {
     height: 100%;
 
     /* Background Image */
-    background-image: url('assets/backgrounds/library.jpg'); 
+    background-image: url('assets/backgrounds/library.png'); 
     background-size: cover; 
     background-position: center; 
     background-repeat: no-repeat;
-
-    /* Blur Effect */
-    filter: blur(5px); 
-    -webkit-filter: blur(5px); /* Older Safari compatibility */
-
-    /* Gradient Overlay */
-    background-blend-mode: overlay; 
-    background-color: rgba(255, 255, 255, 0.357); 
 
     z-index: -1; /* Background stays behind the content */
 }
@@ -144,7 +141,7 @@ body, html {
     font-size: 10px;
     padding-bottom: 20px;
     gap: 10px;
-    color: #795555;
+    color: black;
 }
 
 .charDialouge-container {

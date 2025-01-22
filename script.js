@@ -98,12 +98,31 @@ const dialogues = [
         character: "Theo",
         emotion: "",
         text: "He'd seen that book a thousand times before--in her hands, on her bedside table, in the passenger seat of his car."
-    }
-    ,
+    },
     {
         character: "Theo",
         emotion: "",
         text: "Theo reached for the spine, the title unmistakable in bold serif. He froze as his fingers brushed against the worn cover. Her favorite book. The one she couldn't stop talking about."
+    },
+    {
+        character: "Theo",
+        emotion: "",
+        text: "Sha had given him a copy once, her own, with little underlines and scribbles in the margins. 'You'll love it,' she'd once said to him, handing it over with that kniwing smile. He told himself he didn't have time, but the truth was harder to admit."
+    },
+    {
+        character: "Theo",
+        emotion: "",
+        text: "He wasn't sure if he wanted to see himself reflected in it the way she did."
+    },
+    {
+        character: "Theo",
+        emotion: "",
+        text: "The title stared back at him, mocking in its familiarity. A flutter of warmth rose in Theo's chest before sinking like a stone. It had been two years since he last saw her, but the weight of that felt heavier now, pressing against his ribs."
+    },
+    {
+        character: "Theo",
+        emotion: "",
+        text: ""
     }
 ];
 
