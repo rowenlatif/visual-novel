@@ -1,0 +1,119 @@
+@font-face {
+    font-family: 'Daydream';
+    src: url('assets/Daydream.ttf') format('truetype'); /* Correct path and format */
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: 'Daydream';
+    background-color: #e0e0e0;
+}
+
+.menu-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute; /* Ensure it overlays the canvas */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.9); /* Add a slight background */
+    z-index: 10; /* Ensure it's above the canvas */
+}
+
+
+.menu-title {
+    font-size: 80px; /* Adjust as needed for visibility */
+    color: #000;
+    text-align: center;
+    margin-bottom: 40px; /* Add spacing below the title */
+    font-family: 'Daydream', sans-serif; /* Use the custom font */
+    white-space: nowrap; /* Prevent the title from wrapping onto a new line */
+}
+
+.menu-button {
+    display: block; /* Buttons behave as block-level elements */
+    width: 200px;
+    height: 50px;
+    background-color: #d9c0ba;
+    border: none;
+    border-radius: 30px;
+    font-size: 20px;
+    color: #000;
+    font-family: 'Daydream', sans-serif; /* Use the custom font */
+    text-align: center;
+    cursor: pointer;
+    margin: 20px 0; /* Vertical spacing between buttons */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.menu-button:hover {
+    background-color: #daccc9;
+}
+
+.menu-button:active {
+    background-color: #b89a8f;
+    transform: scale(0.98); 
+}
+
+
+
+
+
+/* STARTGAME */
+.startGame-container {
+    position: relative; 
+    width: 100%; 
+    height: 100vh; 
+    display: flex; 
+    justify-content: center; 
+    align-items: flex-end;
+    padding-bottom: 20px;
+    box-sizing: border-box;
+    padding-bottom: 50px;
+}
+
+.startGame-container img {
+    width: 100%;
+    max-width: none; 
+    height: 300px; 
+}
+
+.char-title {
+    position: absolute;
+    font-size: 27px;
+    left: 8%;
+    top: 57%;
+}
+
+.char-sprite {
+    position: absolute;
+    top: 5%;
+    left: 35%; 
+    width: 500; 
+    height: 500px;
+}
+
+.guiText-container {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    font-size: 10px;
+    padding-bottom: 20px;
+    gap: 10px;
+    color: #795555;
+}
+
+.charDialouge-container {
+    position: absolute;
+    font-size: 15px;
+    left: 1%;
+    top: 66%;
+    width: 90%;
+    word-spacing: 5px;
+    line-height: 1.5;
+}
