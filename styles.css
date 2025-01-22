@@ -72,9 +72,8 @@ body, html {
     display: flex; 
     justify-content: center; 
     align-items: flex-end;
-    padding-bottom: 20px;
     box-sizing: border-box;
-    padding-bottom: 50px;
+    padding-bottom: 40px;
 }
 
 .startGame-container img {
@@ -83,16 +82,56 @@ body, html {
     height: 300px; 
 }
 
+.startGame-mainContainer {
+    position: relative; /* Create a stacking context for the pseudo-element */
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    overflow: hidden; /* Prevent the pseudo-element from overflowing */
+
+    /* Ensure content inside the container is sharp */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding-bottom: 50px; /* Space for bottom content */
+    z-index: 1; /* Content should stay above the background */
+}
+
+.startGame-mainContainer::before {
+    content: ""; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    /* Background Image */
+    background-image: url('assets/backgrounds/library.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+
+    /* Blur Effect */
+    filter: blur(5px); 
+    -webkit-filter: blur(5px); /* Older Safari compatibility */
+
+    /* Gradient Overlay */
+    background-blend-mode: overlay; 
+    background-color: rgba(255, 255, 255, 0.357); 
+
+    z-index: -1; /* Background stays behind the content */
+}
+
 .char-title {
     position: absolute;
     font-size: 27px;
     left: 8%;
-    top: 57%;
+    top: 58%;
 }
 
 .char-sprite {
     position: absolute;
-    top: 5%;
+    top: 8%;
     left: 35%; 
     width: 500; 
     height: 500px;
@@ -112,8 +151,17 @@ body, html {
     position: absolute;
     font-size: 15px;
     left: 1%;
-    top: 66%;
+    top: 68%;
     width: 90%;
     word-spacing: 5px;
     line-height: 1.5;
 }
+
+/* .textbox-img {
+    position: absolute;
+    bottom: 10%; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    width: 90%; 
+    max-width: 1000px; 
+} */

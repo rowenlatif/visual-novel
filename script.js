@@ -79,27 +79,61 @@ function windowResized() {
 // ---------
 // Dialogue data
 const dialogues = [
-    "Theo hadn't planned on being in the library that afternoon. He hated how the florescent lights flickered like they were on their last breath, and the scratchy chair beneath him made it hard to concentrate.",
-    "But his essay deadline loomed, and avoidance could only carry him so far. He leaned back in his chair in frustration, rubbing his temple, when a familiar title caught his eye on the shelf in front of him."
+    {
+        character: "Theo",
+        emotion: "Neutral",
+        text: "Theo hadn't planned on being in the library that afternoon. He hated how the florescent lights flickered like they were on their last breath, and the scratchy chair beneath him made it hard to concentrate.",
+    },
+    {
+        character: "Theo",
+        emotion: "Thoughtful",
+        text: "But his essay deadline loomed, and avoidance could only carry him so far. He leaned back in his chair in frustration, rubbing his temple, when a familiar title caught his eye on the shelf in front of him."
+    },
+    {
+        character: "Theo",
+        emotion: "",
+        text: "It was impossible."
+    },
+    {
+        character: "Theo",
+        emotion: "",
+        text: "He'd seen that book a thousand times before--in her hands, on her bedside table, in the passenger seat of his car."
+    }
+    ,
+    {
+        character: "Theo",
+        emotion: "",
+        text: "Theo reached for the spine, the title unmistakable in bold serif. He froze as his fingers brushed against the worn cover. Her favorite book. The one she couldn't stop talking about."
+    }
 ];
 
 let currentDialogueIndex = 0; // Tracks the current dialogue
-let currentCharIndex = 0; // Tracks the current character being revealed
 let isRevealingText = false; // Tracks if text is still being revealed
 let revealInterval; // Holds the interval ID for text reveal
 
 // HTML references
-const charDialogueContainer = document.querySelector('.charDialouge-container');
-const charDialogue = document.querySelector('.charDialouge');
+const charDialogue = document.querySelector('.charDialouge'); // Dialogue text
+const charTitle = document.querySelector('.char-title'); // Character name
+const charSprite = document.querySelector('.char-sprite'); // Character sprite
 
 // Function to reveal text with animation
 function revealText() {
     if (isRevealingText) return; // Prevent multiple intervals
     isRevealingText = true;
 
-    const fullText = dialogues[currentDialogueIndex];
+    const currentDialogue = dialogues[currentDialogueIndex];
+    const fullText = currentDialogue.text;
     charDialogue.textContent = ""; // Clear previous text
     currentCharIndex = 0;
+
+    // Update character name
+    charTitle.textContent = currentDialogue.character || ""; // If no character, leave blank
+
+    // Update sprite emotion
+    if (currentDialogue.character === "Theo") {
+        const emotion = currentDialogue.emotion || "neutral";
+        charSprite.src = `assets/characters/theoSprites/theo${capitalize(emotion)}.PNG`;
+    }
 
     // Reveal text one character at a time
     revealInterval = setInterval(() => {
@@ -119,7 +153,7 @@ function onScreenClick() {
     if (isRevealingText) {
         // If still revealing, instantly show the full dialogue
         clearInterval(revealInterval);
-        charDialogue.textContent = dialogues[currentDialogueIndex];
+        charDialogue.textContent = dialogues[currentDialogueIndex].text;
         isRevealingText = false;
     } else {
         // If fully revealed, move to the next dialogue
@@ -127,9 +161,14 @@ function onScreenClick() {
         if (currentDialogueIndex < dialogues.length) {
             revealText();
         } else {
-            console.log("End of dialogues"); // Handle end of dialogues here
+            console.log("End of dialogues."); // Handle end of dialogues here
         }
     }
+}
+
+// Utility: Capitalize first letter of emotion
+function capitalize(str) {
+    return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
 // Add click listener to the screen
