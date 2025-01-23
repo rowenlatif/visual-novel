@@ -118,11 +118,6 @@ const dialogues = [
         character: "Theo",
         emotion: "",
         text: "The title stared back at him, mocking in its familiarity. A flutter of warmth rose in Theo's chest before sinking like a stone. It had been two years since he last saw her, but the weight of that felt heavier now, pressing against his ribs."
-    },
-    {
-        character: "Theo",
-        emotion: "",
-        text: ""
     }
 ];
 
